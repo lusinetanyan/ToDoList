@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {TextComponent} from "./text/text.component";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ToDoList';
+  @ViewChild('textComponent')
+  public childComponent! : TextComponent;
+  clicked : boolean = false;
+
+
+  buttonClick() {
+    this.clicked = !this.clicked;
+  }
 }

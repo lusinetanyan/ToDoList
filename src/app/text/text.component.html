@@ -1,0 +1,8 @@
+<div *ngFor="let task of input | filter : checked : clicked; let i = index" id="textAndComment">
+  <div id = "textAndCheckbox"><mat-checkbox #checkbox (change)="checkboxCount(checkbox.checked, i)"><p (click)="onLabelClick(i)">
+    {{task}}</p></mat-checkbox></div>
+  <app-comment *appCommentIf="commentsOn[i]" [comments]="comments[i]" [index]="i" ></app-comment>
+  <input type="button" (click)="delete(i)" value="Delete">
+</div>
+
+

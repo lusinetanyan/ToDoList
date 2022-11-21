@@ -1,0 +1,5 @@
+<div *ngFor="let comment of comments; let i = index">
+  {{comment}}
+</div>
+<textarea placeholder="Add your comment" #current></textarea>
+<button (click)="clickOnComment(current, current.value)">Comment</button>
